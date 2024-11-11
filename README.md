@@ -36,6 +36,16 @@ CICD Pipeline Process
 13. Once the application is deployed we’ll be monitoring it via the use of Prometheus and Grafana 
 
 
+# Phase 1 - Process
+	Created 2 Ubuntu aws instance which will use t2.medium, put the right keypair, security groups etc
+	These two machine would be named K8-Master and K8-Worker
+	SSH onto these machines on mobaxterm
+	Update apt 
+	Create a script which would be used to download and install dockers, install the dependencies for Kubernetes, install Kubernetes etc
+
+![alt text](image-1.png)
+![alt text](image-2.png)
+
 
 # BoardgameListingWebApp Details
 
