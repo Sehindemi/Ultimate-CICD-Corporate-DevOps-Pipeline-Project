@@ -2,6 +2,42 @@
 
 ![alt text](image.png)
 
+CICD Pipeline Process
+
+Jira ticket is created by client using either Jira or Service now which would be them requesting a new feature 
+![image](https://github.com/user-attachments/assets/23c10e2c-d6db-4dae-acf0-79313c3fb699)
+
+Developer takes the ticket and write the source code for the new feature for the application in their local repository and this will get tested locally and will check if everything is working fine.
+
+Once Confirmed this code will be pushed onto GitHub where the code will be placed in a separate branch to the main branch, then once everything is tested a pull request would be made to merge the changes from feature branch to main branch 
+
+Automatically as soon as new code is pushed to main branch GitHub automatically a GitHub Actions pipeline would be triggered based on commit actions
+
+Compile testing would occur which would checks the source code if there are any syntax errors via the use of maven
+
+Then unit testing could occur to see if the applications run smoothly and passes all the unit tests via the use of maven also  
+We’ll then run the code quality check via the use of sonarqube
+
+We’ll then use aqua trivy vulnerability scan to scan our whole repository to ensure we don’t have any bugs or vulnerability within our source code
+
+Now we’re going to build and package the applications which will generate the artefact and the executable file 
+
+Once we build and package the artifact we can then upload it In GitHub
+
+
+Once the artifact is published within GitHub we’ll now need to build the docker image
+
+After the docker image has being build we’ll now need to scan the docker image to see if its having vulnerabilities or not we’ll be using aqua trivy image scan for this 
+
+Once this is done The image would then be pushed onto a Docker Hub repository 
+
+After this we’ll now be creating our yaml manifest files which would be used to deploy this application onto the Dev Cluster initially 
+
+Then after check everything runs smoothly on the Dev Cluster We’ll now deploy this application to our Amazon EKS cluster 
+
+Once the application is deployed we’ll be monitoring it via the use of Prometheus and Grafana 
+
+
 
 # BoardgameListingWebApp Details
 
