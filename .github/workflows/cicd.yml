@@ -3,6 +3,8 @@ name: CICD pipeline
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
+  
 
 jobs:
   build:
@@ -21,4 +23,52 @@ jobs:
     - name: Build with Maven
       run: mvn package --file pom.xml
 
-  
+    - name: Uploading BoardGame artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: BoardGame Artifact 
+        path: target/.jar
+
+    - name: Trivy FS Scan
+      run: |
+        trivy fs --format table-o tricy-fs-report.html .
+
+    - name: SonarQube Scan
+      uses: sonarSource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+    - name: Install Jq
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq
+
+    - name: sonarQube Qualtiy Gate Check 
+      id: sonarqube-qualtiy-gate-check
+      uses: sonarsource/sonarqube-quality-gate-action@master
+      # Force to Fail step after specfic time
+      timeout-minutes: 5
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+
+    - name: Setup Docker buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build docker image
+      run: |
+        docker build -t sehindemitech/boardgames:latest . 
+
+    - name: Trivy Image Scan
+      run: |
+        trivy image --format table -o trivy-image-report.html sehindemitech/boardgame:latest
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrests.DOCKERHUB_TOKEN }}
