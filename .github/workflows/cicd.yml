@@ -78,7 +78,7 @@ jobs:
         docker push sehindemitech/boardgames:latest
         
     - name: Kubectl Action
-      uses: tale/kubec-action@v1
+      uses: tale/kubectl-action@v1
       with:
         base64-kubectl-config: ${{ secrets.KUBE_CONFIG }}
         
