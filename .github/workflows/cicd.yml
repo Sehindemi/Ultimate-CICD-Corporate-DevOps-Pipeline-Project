@@ -77,10 +77,10 @@ jobs:
       run: |
         docker push sehindemitech/boardgames:latest
         
-    # - name: Kubectl Action
-    #   uses: tale/kubectl-action@v1
-    #   with:
-    #     base64-kubectl-config: ${{ secrets.KUBE_CONFIG }}
+    - name: Kubectl Action
+      uses: tale/kubectl-action@v1
+      with:
+        base64-kubectl-config: ${{ secrets.KUBE_CONFIG }}
         
-    # - run: |
-    #     kubectl apply -f deployment-service.yaml -n webapps
+    - run: |
+        kubectl apply -f deployment-service.yaml -n webapps
