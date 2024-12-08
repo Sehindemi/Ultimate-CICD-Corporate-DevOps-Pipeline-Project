@@ -27,7 +27,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: BoardGame Artifact 
-        path: target/.jar
+        path: target/*.jar
 
     - name: Trivy FS Scan
       run: |
