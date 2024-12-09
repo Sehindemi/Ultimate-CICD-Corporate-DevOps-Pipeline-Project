@@ -9,31 +9,31 @@ The deployment phase involves creating Kubernetes (K8s) infrastructure, includin
 The CI/CD pipeline is implemented with self-hosted GitHub runners, where key tools like Docker, SonarQube, Maven, and Trivy are pre-installed. Each pipeline stage is meticulously defined, from code cloning and JDK setup to artifact generation, Docker image creation, scanning, and deployment to Kubernetes. Monitoring dashboards in Grafana display metrics from Prometheus, sourced from Blackbox and Node exporters, enabling proactive infrastructure and application health management. This integrated approach ensures a seamless flow from development to production while maintaining high standards for code quality, security, and reliability.
 
 **GitHub CICD Pipeline**
-**![image](https://github.com/user-attachments/assets/af6953d4-3107-4b25-98cc-71d2294a50f5)
+![image](https://github.com/user-attachments/assets/af6953d4-3107-4b25-98cc-71d2294a50f5)
 
 
-**Grafana DashBoard showing the localhost health****
-**![image](https://github.com/user-attachments/assets/e7bc4b58-bb11-4e8a-a7ef-b9a7edd23157)
+**Grafana DashBoard showing the localhost health**
+![image](https://github.com/user-attachments/assets/e7bc4b58-bb11-4e8a-a7ef-b9a7edd23157)
 
 
-**BoardGame Home Page
-**![image](https://github.com/user-attachments/assets/4049467a-7b56-426f-901c-e4eb02eb38d2)
+**BoardGame Home Page**
+![image](https://github.com/user-attachments/assets/4049467a-7b56-426f-901c-e4eb02eb38d2)
 
 
-**Prometheus Target Health page for Blackbox,node and prometheus endpoints
-**![image](https://github.com/user-attachments/assets/c2e3d33e-1258-4213-bed9-c1b1d9cec832)
+**Prometheus Target Health page for Blackbox,node and prometheus endpoints**
+![image](https://github.com/user-attachments/assets/c2e3d33e-1258-4213-bed9-c1b1d9cec832)
 
 
-**SonarQube Project page for the BoardGame project
-**![image](https://github.com/user-attachments/assets/7ee7ac16-3cb1-4b00-ac6e-00bb5c81398c)
+**SonarQube Project page for the BoardGame project**
+![image](https://github.com/user-attachments/assets/7ee7ac16-3cb1-4b00-ac6e-00bb5c81398c)
 
 
-**BlackBox Exporter page
-**![image](https://github.com/user-attachments/assets/409a5039-b76f-4fd5-9cd6-3560414a42d0)
+**BlackBox Exporter page**
+![image](https://github.com/user-attachments/assets/409a5039-b76f-4fd5-9cd6-3560414a42d0)
 
 
-**NodeExporter Page 
-**![image](https://github.com/user-attachments/assets/817dccf6-aa97-4bf7-9f2d-b3a0b6215ceb)
+**NodeExporter Page**
+![image](https://github.com/user-attachments/assets/817dccf6-aa97-4bf7-9f2d-b3a0b6215ceb)
 
 
 # BoardgameListingWebApp Details
