@@ -2,6 +2,12 @@
 
 ![alt text](image.png)
 
+This project describes a comprehensive DevOps pipeline designed to automate software development, testing, deployment, and monitoring using modern tools and methodologies. The workflow begins with clients creating Jira or ServiceNow tickets to request new application features. Developers then write and test source code locally, ensuring functionality before pushing it to GitHub. Code changes are committed to feature branches, merged into the main branch after testing, and trigger GitHub Actions pipelines. These pipelines automate tasks such as code compilation and testing with Maven, code quality checks using SonarQube, and vulnerability scans with Aqua Trivy for both file systems and Docker images. The build process generates application artifacts, which are subsequently packaged into Docker images, scanned for vulnerabilities, and uploaded to Docker Hub.
+
+The deployment phase involves creating Kubernetes (K8s) infrastructure, including a master and worker node setup on AWS EC2 instances. The project sets up Role-Based Access Control (RBAC) in Kubernetes to manage service account permissions for deployments. YAML manifests are used to deploy applications initially on a development cluster, and later on Amazon EKS. Monitoring is enabled using Prometheus and Grafana, with Blackbox Exporter for website-level monitoring and Node Exporter for system-level metrics. Alerts and dashboards provide real-time insights into application performance and infrastructure health.
+
+The CI/CD pipeline is implemented with self-hosted GitHub runners, where key tools like Docker, SonarQube, Maven, and Trivy are pre-installed. Each pipeline stage is meticulously defined, from code cloning and JDK setup to artifact generation, Docker image creation, scanning, and deployment to Kubernetes. Monitoring dashboards in Grafana display metrics from Prometheus, sourced from Blackbox and Node exporters, enabling proactive infrastructure and application health management. This integrated approach ensures a seamless flow from development to production while maintaining high standards for code quality, security, and reliability.
+
 # BoardgameListingWebApp Details
 
 ## Description
