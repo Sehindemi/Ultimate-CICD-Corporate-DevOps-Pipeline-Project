@@ -2,54 +2,6 @@
 
 ![alt text](image.png)
 
-CICD Pipeline Process
-
-1. Jira ticket is created by client using either Jira or Service now which would be them requesting a new feature 
-
-2. Developer takes the ticket and write the source code for the new feature for the application in their local repository and this will get tested locally and will check if everything is working fine.
-
-3. Once Confirmed this code will be pushed onto GitHub where the code will be placed in a separate branch to the main branch, then once everything is tested a pull request would be made to merge the changes from feature branch to main branch 
-
-4. Automatically as soon as new code is pushed to main branch GitHub automatically a GitHub Actions pipeline would be triggered based on commit actions
-
-4. Compile testing would occur which would checks the source code if there are any syntax errors via the use of maven
-
-5. Then unit testing could occur to see if the applications run smoothly and passes all the unit tests via the use of maven also  
-   We’ll then run the code quality check via the use of sonarqube
-
-5. We’ll then use aqua trivy vulnerability scan to scan our whole repository to ensure we don’t have any bugs or vulnerability within our source code
-
-6. Now we’re going to build and package the applications which will generate the artefact and the executable file 
-
-7. Once we build and package the artifact we can then upload it In GitHub
-
-8. Once the artifact is published within GitHub we’ll now need to build the docker image
-
-9. After the docker image has being build we’ll now need to scan the docker image to see if its having vulnerabilities or not we’ll be using aqua trivy image scan for this 
-
-10. Once this is done The image would then be pushed onto a Docker Hub repository 
-
-11. After this we’ll now be creating our yaml manifest files which would be used to deploy this application onto the Dev Cluster initially 
-
-12. Then after check everything runs smoothly on the Dev Cluster We’ll now deploy this application to our Amazon EKS cluster 
-
-13. Once the application is deployed we’ll be monitoring it via the use of Prometheus and Grafana 
-
-
-# Phase 1 - Process
-Created 2 Ubuntu aws instance which will use t2.medium, put the right keypair, security groups etc
-
-2. these two machine would be named K8-Master and K8-Worker
-	SSH onto these machines on mobaxterm
-	Update apt 
-	Create a script which would be used to download and install dockers, install the dependencies for Kubernetes, install Kubernetes etc
-
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-4.png)
-![alt text](image-3.png)
-![alt text](image-5.png)
-
 # BoardgameListingWebApp Details
 
 ## Description
