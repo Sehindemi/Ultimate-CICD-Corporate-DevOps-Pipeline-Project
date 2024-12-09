@@ -8,19 +8,19 @@ The deployment phase involves creating Kubernetes (K8s) infrastructure, includin
 
 The CI/CD pipeline is implemented with self-hosted GitHub runners, where key tools like Docker, SonarQube, Maven, and Trivy are pre-installed. Each pipeline stage is meticulously defined, from code cloning and JDK setup to artifact generation, Docker image creation, scanning, and deployment to Kubernetes. Monitoring dashboards in Grafana display metrics from Prometheus, sourced from Blackbox and Node exporters, enabling proactive infrastructure and application health management. This integrated approach ensures a seamless flow from development to production while maintaining high standards for code quality, security, and reliability.
 
-##**GitHub CICD Pipeline**
+## **GitHub CICD Pipeline**
 ![image](https://github.com/user-attachments/assets/af6953d4-3107-4b25-98cc-71d2294a50f5)
 
 
-##**Grafana DashBoard showing the localhost health**
+## **Grafana DashBoard showing the localhost health**
 ![image](https://github.com/user-attachments/assets/e7bc4b58-bb11-4e8a-a7ef-b9a7edd23157)
 
 
-##**BoardGame Home Page**
+## **BoardGame Home Page**
 ![image](https://github.com/user-attachments/assets/4049467a-7b56-426f-901c-e4eb02eb38d2)
 
 
-**Prometheus Target Health page for Blackbox,node and prometheus endpoints**
+## **Prometheus Target Health page for Blackbox,node and prometheus endpoints**
 ![image](https://github.com/user-attachments/assets/c2e3d33e-1258-4213-bed9-c1b1d9cec832)
 
 
