@@ -24,15 +24,15 @@ The CI/CD pipeline is implemented with self-hosted GitHub runners, where key too
 ![image](https://github.com/user-attachments/assets/c2e3d33e-1258-4213-bed9-c1b1d9cec832)
 
 
-**SonarQube Project page for the BoardGame project**
+## **SonarQube Project page for the BoardGame project**
 ![image](https://github.com/user-attachments/assets/7ee7ac16-3cb1-4b00-ac6e-00bb5c81398c)
 
 
-**BlackBox Exporter page**
+## **BlackBox Exporter page**
 ![image](https://github.com/user-attachments/assets/409a5039-b76f-4fd5-9cd6-3560414a42d0)
 
 
-**NodeExporter Page**
+## **NodeExporter Page**
 ![image](https://github.com/user-attachments/assets/817dccf6-aa97-4bf7-9f2d-b3a0b6215ceb)
 
 
